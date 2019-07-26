@@ -5,11 +5,15 @@ const useDarkMode = () => {
   const [mode, setMode] = useLocalStorage('darkMode');
 
   useEffect(() => {
-    if (mode) {
-      document.body.classList.add('dark-mode');
-    } else {
+    // if (mode) {
+    //   document.body.classList.add('dark-mode');
+    //   // or
+    //   // document.querySelector('body').classList.add('dark-mode');
+    // } else {
+    //   document.body.classList.remove('dark-mode');
+    // }
+    (mode) ? document.body.classList.add('dark-mode') :
       document.body.classList.remove('dark-mode');
-    }
   }, [mode]);
   return [mode, setMode];
 }
